@@ -60,7 +60,7 @@ class F8MapView extends React.Component {
             renderEmptyList={() => <MapView map={map1} />}
           />
           <PureListView
-            title="Developer Garage"
+            title="Garage"
             renderEmptyList={() => <MapView map={map2} />}
           />
         </ListContainer>
@@ -69,6 +69,7 @@ class F8MapView extends React.Component {
           icon={require('./img/directions.png')}
           caption="Directions to Fort Mason Center"
           onPress={this.handleGetDirections}
+          onTap={this.handleGetDirections}
           style={styles.directionsButton}
         />
       </View>
@@ -76,6 +77,7 @@ class F8MapView extends React.Component {
   }
 
   handleGetDirections() {
+    alert('Hey')
     if (Platform.OS === 'ios') {
       ActionSheetIOS.showActionSheetWithOptions(
         {

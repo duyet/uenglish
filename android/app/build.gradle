@@ -115,7 +115,8 @@ android {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
             universalApk false  // Also generate an universal APK
-            include "armeabi-v7a", "x86"
+            // include "armeabi-v7a", "x86"
+            include 'arm', 'arm-v7a', 'arm64', 'mips', 'x86', 'x86_64', 'armeabi-v7a'
         }
     }
     buildTypes {

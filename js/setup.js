@@ -36,8 +36,8 @@ var configureStore = require('./store/configureStore');
 var {serverURL} = require('./env');
 
 function setup(): ReactClass<{}> {
-  console.disableYellowBox = true;
-  Parse.initialize('oss-f8-app-2016');
+  // console.disableYellowBox = false;
+  Parse.initialize('uenglish');
   Parse.serverURL = `${serverURL}/parse`;
 
   FacebookSDK.init();

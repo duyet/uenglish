@@ -122,14 +122,14 @@ class F8TabsView extends React.Component {
         <View>
           <Image source={require('./img/logo.png')} />
           <Text style={styles.name}>
-            APRIL 12 + 13 / SAN FRANCISCO
+            UEnglish
           </Text>
         </View>
       );
       loginItem = (
         <View style={styles.loginPrompt}>
           <Text style={styles.loginText}>
-            Log in to find your friends at F8.
+            Please login.
           </Text>
           <LoginButton source="Drawer" />
         </View>
@@ -143,20 +143,20 @@ class F8TabsView extends React.Component {
           {accountItem}
         </Image>
         <MenuItem
-          title="Schedule"
+          title="Topics"
           selected={this.props.tab === 'schedule'}
           onPress={this.onTabSelect.bind(this, 'schedule')}
           icon={scheduleIcon}
           selectedIcon={scheduleIconSelected}
         />
         {myF8Item}
-        <MenuItem
+        {/*<MenuItem
           title="Maps"
           selected={this.props.tab === 'map'}
           onPress={this.onTabSelect.bind(this, 'map')}
           icon={require('./maps/img/maps-icon.png')}
           selectedIcon={require('./maps/img/maps-icon-active.png')}
-        />
+        />*/}
         <MenuItem
           title="Notifications"
           selected={this.props.tab === 'notifications'}

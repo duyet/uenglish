@@ -71,16 +71,16 @@ class LoginScreen extends React.Component {
         </View>
         <View style={styles.section}>
           <Animated.Text style={[styles.h1, this.fadeIn(700, -20)]}>
-            code to
+            english card
           </Animated.Text>
           <Animated.Text style={[styles.h1, {marginTop: -30}, this.fadeIn(700, 20)]}>
             connect
           </Animated.Text>
           <Animated.Text style={[styles.h2, this.fadeIn(1000, 10)]}>
-            April 12 + 13 / Fort Mason Center
+            Van-Duyet Le
           </Animated.Text>
           <Animated.Text style={[styles.h3, this.fadeIn(1200, 10)]}>
-            SAN FRANCISCO, CALIFORNIA
+            UIT 2016
           </Animated.Text>
         </View>
         <Animated.View style={[styles.section, styles.last, this.fadeIn(2500, 20)]}>

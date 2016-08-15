@@ -28,22 +28,18 @@ var CommonQuestions = require('./CommonQuestions');
 var LinksList = require('./LinksList');
 var ListContainer = require('ListContainer');
 var PureListView = require('../../common/PureListView');
+import { Paragraph } from '../../common/F8Text';
+var Section = require('./Section');
 var React = require('React');
 var Relay = require('react-relay');
 var View = require('View');
 var WiFiDetails = require('./WiFiDetails');
 
 
-const POLICIES_LINKS = [{
-  title: 'Terms of Service',
-  url: 'https://m.facebook.com/terms?_rdr',
-}, {
-  title: 'Data Policy',
-  url: 'https://m.facebook.com/policies?_rdr',
-}, {
-  title: 'Code of Conduct',
-  url: 'https://www.fbf8.com/code-of-conduct',
-}];
+const INFO_LINKS = [{
+  title: 'Author homepage',
+  url: 'https://duyetdev.com',
+},];
 
 function F8InfoView() {
   return (
@@ -61,13 +57,14 @@ function InfoList({viewer: {config, faqs, pages}, ...props}) {
     <PureListView
       renderEmptyList={() => (
         <View>
-          <WiFiDetails
-            network={config.wifiNetwork}
-            password={config.wifiPassword}
-          />
+          <Section title="UEnglish">
+            <Paragraph style={{ flex: 2, textAlign: 'center' }}>Author: Van-Duyet Le</Paragraph>
+            <Paragraph style={{ flex: 2, textAlign: 'center' }}>Version: 1.0</Paragraph>
+          </Section>
+
           <CommonQuestions faqs={faqs} />
-          <LinksList title="Facebook pages" links={pages} />
-          <LinksList title="Facebook policies" links={POLICIES_LINKS} />
+          
+          <LinksList title="Link" links={INFO_LINKS} />
         </View>
       )}
       {...(props: any /* flow can't guarantee the shape of props */)}
