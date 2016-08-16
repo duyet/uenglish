@@ -32,10 +32,11 @@ var React = require('React');
 var Platform = require('Platform');
 var F8DrawerLayout = require('F8DrawerLayout');
 var ScheduleListView = require('./ScheduleListView');
+var LessionListView = require('./LessionListView');
 var FilterScreen = require('../../filter/FilterScreen');
 
 var { connect } = require('react-redux');
-var {switchDay} = require('../../actions');
+var {switchDay, switchLession} = require('../../actions');
 
 import type {Session} from '../../reducers/sessions';
 
@@ -51,10 +52,13 @@ const data = createSelector(
 type Props = {
   filter: any;
   day: number;
+  lession: number;
+  level: number;
   sessions: Array<Session>;
   navigator: Navigator;
   logOut: () => void;
   switchDay: (day: number) => void;
+  switchLession: (lession: number) => void;
 };
 
 class GeneralScheduleView extends React.Component {
@@ -66,6 +70,7 @@ class GeneralScheduleView extends React.Component {
 
     (this: any).renderEmptyList = this.renderEmptyList.bind(this);
     (this: any).switchDay = this.switchDay.bind(this);
+    (this: any).switchLession = this.switchLession.bind(this);
     (this: any).openFilterScreen = this.openFilterScreen.bind(this);
     (this: any).renderNavigationView = this.renderNavigationView.bind(this);
   }
@@ -83,24 +88,38 @@ class GeneralScheduleView extends React.Component {
 
     const content = (
       <ListContainer
-        title="Schedule"
-        selectedSegment={this.props.day - 1}
-        onSegmentChange={this.switchDay}
+        title="Lessons"
+        selectedSegment={this.props.lession - 1}
+        onSegmentChange={this.switchLession}
         backgroundImage={require('./img/schedule-background.png')}
         backgroundColor="#5597B8"
         selectedSectionColor="#51CDDA"
         stickyHeader={filterHeader}
         rightItem={filterItem}>
-        <ScheduleListView
-          title="Day 1"
-          day={1}
+        <LessionListView
+          title="Level 1"
+          lession={1}
           sessions={this.props.sessions}
           renderEmptyList={this.renderEmptyList}
           navigator={this.props.navigator}
         />
-        <ScheduleListView
-          title="Day 2"
-          day={2}
+        <LessionListView
+          title="Level 2"
+          lession={2}
+          sessions={this.props.sessions}
+          renderEmptyList={this.renderEmptyList}
+          navigator={this.props.navigator}
+        />
+        <LessionListView
+          title="Level 3"
+          lession={3}
+          sessions={this.props.sessions}
+          renderEmptyList={this.renderEmptyList}
+          navigator={this.props.navigator}
+        />
+        <LessionListView
+          title="Level 4"
+          lession={4}
           sessions={this.props.sessions}
           renderEmptyList={this.renderEmptyList}
           navigator={this.props.navigator}
@@ -126,11 +145,11 @@ class GeneralScheduleView extends React.Component {
     return <FilterScreen onClose={() => this._drawer && this._drawer.closeDrawer()} />;
   }
 
-  renderEmptyList(day: number) {
+  renderEmptyList() {
     return (
       <EmptySchedule
-        title={`No sessions on day ${day} match the filter`}
-        text="Check the schedule for the other day or remove the filter."
+        title={`No lession for this level`}
+        text="Please check and try again later."
       />
     );
   }
@@ -146,11 +165,16 @@ class GeneralScheduleView extends React.Component {
   switchDay(page) {
     this.props.switchDay(page + 1);
   }
+
+  switchLession(page) {
+    this.props.switchLession(page + 1);
+  }
 }
 
 function select(store) {
   return {
     day: store.navigation.day,
+    lession: store.navigation.lession,
     filter: store.filter,
     sessions: data(store),
   };
@@ -159,6 +183,7 @@ function select(store) {
 function actions(dispatch) {
   return {
     switchDay: (day) => dispatch(switchDay(day)),
+    switchLession: (day) => dispatch(switchLession(day)),
   };
 }
 

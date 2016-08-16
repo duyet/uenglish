@@ -53,6 +53,7 @@ var F8App = React.createClass({
 
     // TODO: Make this list smaller, we basically download the whole internet
     this.props.dispatch(loadNotifications());
+    this.props.dispatch(loadLessions());
     this.props.dispatch(loadMaps());
     this.props.dispatch(loadConfig());
     this.props.dispatch(loadSessions());

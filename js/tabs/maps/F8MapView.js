@@ -77,7 +77,6 @@ class F8MapView extends React.Component {
   }
 
   handleGetDirections() {
-    alert('Hey')
     if (Platform.OS === 'ios') {
       ActionSheetIOS.showActionSheetWithOptions(
         {

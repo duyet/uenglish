@@ -67,7 +67,7 @@ class F8TabsView extends React.Component {
   getChildContext() {
     return {
       openDrawer: this.openDrawer,
-      hasUnreadNotifications: this.props.notificationsBadge > 0,
+      hasUnreadNotifications: this.props.notificationsBadge > 0 ? true : false,
     };
   }
 
@@ -143,20 +143,20 @@ class F8TabsView extends React.Component {
           {accountItem}
         </Image>
         <MenuItem
-          title="Topics"
+          title="Lessons"
           selected={this.props.tab === 'schedule'}
           onPress={this.onTabSelect.bind(this, 'schedule')}
           icon={scheduleIcon}
           selectedIcon={scheduleIconSelected}
         />
         {myF8Item}
-        {/*<MenuItem
-          title="Maps"
+        <MenuItem
+          title="Map"
           selected={this.props.tab === 'map'}
           onPress={this.onTabSelect.bind(this, 'map')}
           icon={require('./maps/img/maps-icon.png')}
           selectedIcon={require('./maps/img/maps-icon-active.png')}
-        />*/}
+        />
         <MenuItem
           title="Notifications"
           selected={this.props.tab === 'notifications'}
@@ -223,7 +223,7 @@ class F8TabsView extends React.Component {
 
 F8TabsView.childContextTypes = {
   openDrawer: React.PropTypes.func,
-  hasUnreadNotifications: React.PropTypes.number,
+  hasUnreadNotifications: React.PropTypes.bool,
 };
 
 function select(store) {

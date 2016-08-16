@@ -31,6 +31,7 @@ const InteractionManager = require('InteractionManager');
 import type { ThunkAction } from './types';
 
 const Maps = Parse.Object.extend('Maps');
+const Lessions = Parse.Object.extend('Lessions');
 const Notification = Parse.Object.extend('Notification');
 
 function loadParseQuery(type: string, query: Parse.Query): ThunkAction {
@@ -59,6 +60,9 @@ module.exports = {
 
   loadMaps: (): ThunkAction =>
     loadParseQuery('LOADED_MAPS', new Parse.Query(Maps)),
+
+  loadLessions: (): ThunkAction =>
+    loadParseQuery('LOADED_LESSIONS', new Parse.Query(Lessions)),
 
   loadNotifications: (): ThunkAction =>
     loadParseQuery('LOADED_NOTIFICATIONS', new Parse.Query(Notification)),

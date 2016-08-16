@@ -23,6 +23,7 @@
 package com.facebook.f8;
 
 import com.facebook.react.ReactActivity;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -89,6 +90,7 @@ public class MainActivity extends ReactActivity {
 
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+            new LinearGradientPackage(),
         new FBSDKPackage(mCallbackManager),
         new LinearGradientPackage(),
         new RNSharePackage(),
