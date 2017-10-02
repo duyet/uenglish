@@ -1,0 +1,54 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - react-native-maps > react-native > connect > express-session > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - parse-server > express > serve-static > send > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native-maps > react-native > connect > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - parse-server > body-parser > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - parse-server > express > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > body-parser > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native-maps > react-native > connect > body-parser > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > compression > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native-maps > react-native > connect > compression > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > connect-timeout > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native-maps > react-native > connect > connect-timeout > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > express-session > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > finalhandler > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native-maps > react-native > connect > finalhandler > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > morgan > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native-maps > react-native > connect > morgan > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > serve-index > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native-maps > react-native > connect > serve-index > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - parse-server > express > send > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - parse-server > parse-server-simple-mailgun-adapter > mailgun-js > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native > connect > serve-static > send > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - react-native-maps > react-native > connect > serve-static > send > debug:
+        patched: '2017-10-02T01:30:24.929Z'
+    - parse-dashboard > cookie-session > debug:
+        patched: '2017-10-02T01:30:24.929Z'
