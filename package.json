@@ -22,7 +22,7 @@
     "parse-dashboard": "~2.0.0",
     "parse-server": "~4.10.13",
     "react": "~15.1.0",
-    "react-native": "0.64.0",
+    "react-native": "0.65.0",
     "react-native-code-push": "~1.12.2-beta",
     "react-native-fbsdk": "^0.3.0",
     "react-native-linear-gradient": "~1.5.0",
